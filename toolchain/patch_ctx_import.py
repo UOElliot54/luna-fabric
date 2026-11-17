@@ -1,0 +1,10 @@
+for p in (r'C:\Users\ElliotPC\Documents\StrataProjects\MinecraftMod\luna\src\main\java\com\example\LunaCatExtras.java',
+          r'C:\Users\ElliotPC\Documents\StrataProjects\MinecraftMod\luna\src\main\java\com\example\LunaCatFeature.java'):
+    s = open(p, encoding='utf-8').read()
+    for old in ('import net.minecraft.client.render.entity.EntityRendererFactory.Context;',
+                'import net.minecraft.client.render.entity.EntityRendererFactory;'):
+        if old in s:
+            s = s.replace(old, 'import net.minecraft.client.render.entity.EntityRendererFactory' + chr(36) + 'Context;')
+            break
+    open(p, 'w', encoding='utf-8').write(s)
+    print(p.split('\\')[-1], chr(36) in s)

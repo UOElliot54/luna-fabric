@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "luna:item/luna_spawn_egg"
+    }
+}

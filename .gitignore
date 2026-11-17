@@ -1,0 +1,8 @@
+# build output
+luna/build/
+luna/.gradle/
+.gradle/
+
+# scratch
+probe.txt
+*.log
