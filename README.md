@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="import-ready/luna/resources/assets/luna/icon.png" alt="Luna the Minecraft cat" width="200">
+</div>
+
 # Luna (Java Minecraft 1.20.1, Fabric Mod)
 
 A spawn egg that summons **Luna**. An ordinary vanilla cat wearing her own coat,
