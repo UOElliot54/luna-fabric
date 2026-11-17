@@ -1,6 +1,6 @@
-# Luna (Java Minecraft 1.20.1, Fabric loader)
+# Luna (Java Minecraft 1.20.1, Fabric Mod)
 
-A spawn egg that conjures **Luna**. An ordinary vanilla cat wearing her own coat,
+A spawn egg that summons **Luna**. An ordinary vanilla cat wearing her own coat,
 a pink collar and a floating nameplate that says **Luna**. Nothing else is added or
 changed which is why the egg works in Creative as well as in a survival
 world.
@@ -9,7 +9,7 @@ world.
 
 | | |
 | --- | --- |
-| Game version | Java `1.20.1` (the version the Homestead pack pins) |
+| Game version | Java `1.20.1` |
 | Loader | Fabric `>=0.17.2` |
 | Build toolchain | Loom `1.11-SNAPSHOT`, yarn `1.20.1+build.10`, Java 21 to build |
 | Fabric API | **not required** — the code uses only Minecraft's own classes |
@@ -23,8 +23,6 @@ world.
 | `luna/build.gradle`, `luna/settings.gradle`, `luna/gradle.properties`, `gradlew.bat` | The Fabric/Gradle project, with the version pins above written into `gradle.properties` |
 | `import-ready/luna/` | The built artifact: `luna-fabric-1.20.1-0.0.3.jar` (the file hosted on Modrinth) plus the same resources in loose folder form for a `.minecraft/mods` drop |
 | `luna/CHANGES.html` | The changelog text the Modrinth page shows |
-| `luna/IMPORT-INTO-HOMESTEAD.md` | How the package drops into the Homestead pack zip |
-| `luna/MODRINTH-PUBLISH.md` | The publishing notes: which file to attach, which fields to set, what the moderation queue does |
 | `toolchain/` | How the coat, the icon and the packaging were made. These scripts use absolute local paths, so they are for reading, not a build entry point |
 
 ## Building
