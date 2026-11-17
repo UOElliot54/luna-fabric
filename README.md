@@ -1,10 +1,8 @@
-# Luna — the Maine Coon (Java Minecraft 1.20.1, Fabric loader)
+# Luna (Java Minecraft 1.20.1, Fabric loader)
 
-A spawn egg that conjures **Luna**, a cat modelled on my own Maine Coon. Left-click a
-surface with the egg and she steps out: an ordinary vanilla cat wearing her own coat,
+A spawn egg that conjures **Luna**. An ordinary vanilla cat wearing her own coat,
 a pink collar and a floating nameplate that says **Luna**. Nothing else is added or
-changed — she sleeps with you, follows you, gets fed, and behaves exactly like a cat
-the game would spawn, which is why the egg works in Creative as well as in a survival
+changed which is why the egg works in Creative as well as in a survival
 world.
 
 ## Targets
@@ -46,20 +44,23 @@ nothing about how it loads.
 
 ## Installing
 
-Put the jar in `.minecraft/mods/luna/` with `resources/` beside it, or install the
+Put the jar in `.minecraft/mods/`, or install the
 Modrinth listing. The jar needs no Fabric API dependency.
 
 ## Licence
 
-MIT — see `LICENSE`. One honest caveat: her coat texture was generated from photographs
+MIT — see `LICENSE`. Her coat texture was generated from photographs
 of the real cat and built on top of Minecraft's own cat texture, so Minecraft's usage
 rules govern that material; MIT covers the code, the artwork and the packaging written
 for this project.
 
+The manifest inside the jar carries this repository twice — a `contact` block whose `sources`
+member is the repository URL and whose `issues` member is the issue tracker — so a downloaded
+copy of the file points back here. Fabric's v1 manifest spec has no `source_url` key; `contact`
+is the name, with `email`, `irc`, `homepage`, `issues` and `sources` as its defined members
+(<https://wiki.fabricmc.net/documentation:fabric_mod_json_spec>).
+
 ## How it was made
 
-The code, the coat and the icon were produced with an AI coding assistant; the design
-decisions, art direction, testing and bug reports were mine (a stack of 64 eggs drinking
-all at once, a face that rendered wrong after an over-enlarged eye pass, an icon that
-read as nothing). Other experiments from the same workspace, including a chamomile-tea
-trial mod, are kept out of this repository.
+The code, the coat and the icon were produced with Qwen3.8-Flash-Next Coder IQ1_M running locally with Strata; the design
+decisions, art direction, testing and bug reports were mine.

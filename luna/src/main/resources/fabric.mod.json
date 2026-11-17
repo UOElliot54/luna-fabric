@@ -8,6 +8,10 @@
         "ElliotPC"
     ],
     "license": "MIT",
+    "contact": {
+        "issues": "https://github.com/UOElliot54/luna-fabric/issues",
+        "sources": "https://github.com/UOElliot54/luna-fabric"
+    },
     "date": "2026-11-16",
     "icon": "assets/luna/icon.png",
     "entrypoints": {

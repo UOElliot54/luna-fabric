@@ -5,7 +5,7 @@ Sources are Modrinth's own help center, its v2 API docs, and Fabric's loader doc
 
 ## What file to attach
 
-Attach **`import-ready/luna/luna-fabric-1.20.1-0.0.3.jar`** (35,239 bytes, sha256 ce959b01cab8a0,
+Attach **`import-ready/luna/luna-fabric-1.20.1-0.0.3.jar`** (35,293 bytes, sha256 22bd3069e69ea1,
 built 2026-11-16). The
 file name follows the convention the other Homestead jars already use — `carycon-fabric-1.20.1-2.1.2.7.jar`,
 `celestconfig-fabric-1.20.1-1.1.2.jar`, `balm-fabric-1.20.1-7.3.3.jar`, `chipped-fabric-1.20.1-3.0.7.jar` —
@@ -23,9 +23,28 @@ language file, the item model, her 512x256 coat and the egg icon). Modrinth acce
 so the jar goes straight in. `import-ready/luna-modrinth.zip` is the same entries plus `CHANGES.html`
 for the case where you want a `.zip`; the jar is the preferred file.
 
-Closed source is allowed: nothing in Modrinth's rules asks for source code or an external link
-(`source_url` is optional), and a sources jar is only an *allowed extra file*
-(<https://support.modrinth.com/en/articles/8793363-additional-files>).
+Source is public now: the repository lives at <https://github.com/UOElliot54/luna-fabric>, so the
+page's `source_url` and Links panel should carry it, and the jar's own manifest carries a matching
+`contact` block. Note the two specs use different names for the same thing: a `fabric.mod.json` has
+no `source_url` key at all — under Fabric's v1 spec the key is `contact`, whose defined members are
+`email`, `irc`, `homepage`, `issues` and `sources` (<https://wiki.fabricmc.net/documentation:fabric_mod_json_spec>);
+`source_url` is a Modrinth-side field on the version, not a manifest field. Adding a manifest
+`contact` block means rebuilding the jar, so the correct file to attach is the newest one above, and
+you fill the page links and the jar in one pass.
+
+## If you already uploaded a version and the file changed
+
+A hosted version's file cannot be edited in place, and two versions on one project cannot share a
+version number. So replacing a file means one of:
+
+- **delete that version, then create a new one with the same number** (`0.0.3`) carrying the new
+  file — the version number keeps matching the manifest inside the jar, which is what you want;
+  deleting and re-submitting sends the project back through the moderation queue;
+- **keep the live version and add a second one** — the number has to be unique, so `0.0.4`, and the
+  manifest inside the new jar has to say `0.0.4` too, which means another rebuild and a renamed file.
+
+If the version is still sitting in review or a draft, nothing is live yet and you simply submit the
+newest file once — there is nothing to replace.
 
 ## Account
 
@@ -42,7 +61,7 @@ effect on publishing, and nothing you upload grants it.
 | --- | --- |
 | Project type | Mod |
 | Slug | `luna-the-maine-coon-cat` — free today (modrinth.com/mod/luna-the-maine-coon-cat returns "Project not found"). Plain `luna` is **taken** (modrinth.com/mod/luna is someone else's mod). Slugs are 3–64 chars of that pattern and are mutable; the 8-character project ID is the stable one, and you can test availability with `GET /v2/project/{slug}/check` (<https://docs.modrinth.com/api/operations/checkprojectvalidity/>) |
-| Title | Luna - The Maine Coon Cat (or whatever you want readers to see) |
+| Title | `Luna` (or whatever you want readers to see — note the manifest's own `name` inside the jar still reads `Luna - The Maine Coon (Homestead Trial)`, which is what the loader shows in its own listings) |
 | Description | One or two sentences, then the body: what the egg does, that she behaves like a vanilla cat, that the coat is her real pattern |
 | `license_id` | `MIT` — matches the manifest's `license` (changed from `CC0-1.0` because the source is going public, and an all-rights-reserved or CC0 tag would contradict a public repository); the repo's `LICENSE` file says MIT too. Caveat to keep in the description: her coat texture descends from Minecraft's own cat texture, so MIT covers your code and your own art, not Mojang's assets |
 | `loaders` | `["fabric"]` |
@@ -53,7 +72,7 @@ effect on publishing, and nothing you upload grants it.
 | Changelog | the text from `luna/CHANGES.html` |
 | Dependencies | Fabric API as **optional** (`dependency_type: optional`) — our jar pulls in no fabric-api classes at all, but Homestead ships it through The Ultimate Compat Mod, so declaring it optional is the honest statement. Every version has to state its dependencies (<https://modrinth.com/legal/rules>) |
 | Icon / gallery | `assets/luna/icon.png` (the pixel-art face) plus in-game screenshots if you want |
-| `source_url` | leave empty while closed source; fill it once the git repo is public |
+| `source_url` | `https://github.com/UOElliot54/luna-fabric` — the repository is public. The Links panel takes the same pair: Source code = that URL, Issue tracker = `<repo>/issues`; Wiki page and Discord invite stay blank unless you have them. The jar's manifest already repeats both links in its `contact` block (`sources` and `issues`), so the page and the file agree without anyone editing either |
 
 ## What happens after you submit
 

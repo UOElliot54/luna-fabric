@@ -8,7 +8,7 @@ Sits next to the Chamomile Tea trial mod in this workspace; both packages are in
 | Thing | What you get |
 | --- | --- |
 | **Luna's Spawn Egg** (`luna:luna_spawn_egg`) | Left-click on a surface and Luna steps out at that block. One egg = one Luna outside Creative; Creative does not eat your copy. |
-| **Luna** | A real in-game cat with her **own detailed coat**: an 8x (512x256) brown-silver Maine Coon tabby pattern — dark agouti rings over warm grey-brown fur with lighter fur strands, a pale ruff band, white muzzle and paws, chartreuse-green eyes with glints and dark rims, pink nose. Painted from the two reference photos of her. |
+| **Luna** | A real in-game cat with her **own detailed coat**: an 8x (512x256) brown-silver tabby pattern — dark agouti rings over warm grey-brown fur with lighter fur strands, a pale ruff band, white muzzle and paws, chartreuse-green eyes with glints and dark rims, pink nose. Painted from the two reference photos of her. |
 | **Her nameplate** | She is spawned with a nametag: **"Luna"** floats above her head permanently (always visible, even from a distance, exactly like a named pet). |
 | **Her collar** | A **pink 3D collar** is drawn around her neck (the game already draws collars on tamed cats on this core; we just give Luna one at spawn). Change the colour in `src/main/java/com/example/Luna.java` — `LUNA_COLLAR = DyeColor.PINK` can be any of `WHITE, ORANGE, MAGENTA, LIGHT_BLUE, YELLOW, LIME, PINK, GRAY, LIGHT_GRAY, CYAN, PURPLE, BLUE, BROWN, GREEN, RED, BLACK`. On a core that has no collar API the call is skipped safely and she just keeps coat + nameplate. |
 | Her behaviour | **Exactly the vanilla cat AI** — nothing is overridden. She wanders, sleeps in the sun, is chased by dogs, and you can feed her a fish to make her sit and stay like any other cat. |
@@ -48,7 +48,7 @@ compiled into this jar: their hook needs the Fabric mixin route, which we are no
 
 ```
 import-ready/luna/
-  luna-fabric-1.20.1-0.0.3.jar             Loom-remapped jar (35,239 bytes) - ship this one
+  luna-fabric-1.20.1-0.0.3.jar             Loom-remapped jar (35,293 bytes) - ship this one
                                             (file name follows the pack's own convention:
                                              id + fabric + game version + mod version, like
                                              carycon-fabric-1.20.1-2.1.2.7.jar next to it)
@@ -124,7 +124,7 @@ Loom 1.11 needs a JDK 21 on the build machine; the shipped bytecode still target
 - The coat texture reuses the **vanilla cat UV sheet** (64x32, extracted from the game jar) and is
   repainted to Luna's palette, so the markings land where vanilla expects them (the tabby's stripes,
   cream chest, pink nose, eye pixels are all in the right places).
-- Not modelled: Maine Coon ear tufts and the extra-fluffy tail need mesh changes, which a variant
+- Not modelled: her ear tufts and the extra-fluffy tail need mesh changes, which a variant
   cannot do. The coat fakes the ruff and the ringed tail instead.
 
 ## If something looks wrong in game
