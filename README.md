@@ -22,7 +22,6 @@ world.
 | `luna/fabric.mod.json` | The manifest source (the `version` field is a template filled in by the build) |
 | `luna/build.gradle`, `luna/settings.gradle`, `luna/gradle.properties`, `gradlew.bat` | The Fabric/Gradle project, with the version pins above written into `gradle.properties` |
 | `import-ready/luna/` | The built artifact: `luna-fabric-1.20.1-0.0.3.jar` (the file hosted on Modrinth) plus the same resources in loose folder form for a `.minecraft/mods` drop |
-| `luna/CHANGES.html` | The changelog text the Modrinth page shows |
 | `toolchain/` | How the coat, the icon and the packaging were made. These scripts use absolute local paths, so they are for reading, not a build entry point |
 
 ## Building
@@ -42,8 +41,8 @@ nothing about how it loads.
 
 ## Installing
 
-Put the jar in `.minecraft/mods/`, or install the
-Modrinth listing. The jar needs no Fabric API dependency.
+Put the jar from `import-ready/luna/` in `.minecraft/mods/`, or install from the
+Modrinth listing https://modrinth.com/mod/luna-elliot01ka (Currently Project Under Review). The jar needs no Fabric API dependency.
 
 ## Licence
 
